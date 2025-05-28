@@ -36,7 +36,8 @@ const getBlog = async(req,res)=>{
 };
 
 const createBlog = async(req,res)=>{
-    const {title,description,author} = req.body;
+    const {title,description} = req.body;
+    const author = req.user.username;
     try{
         const newBlog = new Blog({title,description,author});
         await newBlog.save();
@@ -49,9 +50,9 @@ const createBlog = async(req,res)=>{
 
 const updateBlog = async(req,res)=>{
     const {id} = req.params;
-    const {title,description,author} = req.body;
+    const {title,description} = req.body;
     try{
-        const updatedBlog = await Blog.findByIdAndUpdate(id,{title,description,author},{new:true});
+        const updatedBlog = await Blog.findByIdAndUpdate(id,{title,description},{new:true});
         if(!updatedBlog){
             res.status(200).send("Blog not found");
         }
