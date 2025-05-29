@@ -32,13 +32,13 @@ const login = async(req,res)=>{
       { expiresIn: "1h" }
     );
         
-        
         res.status(200).json({
             success:true,
             message:"Login successfull",
             data:{
                 email,
-                token
+                token,
+                username:user.username,
             }
         })
         

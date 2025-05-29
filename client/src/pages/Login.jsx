@@ -1,31 +1,37 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import {loginSuccess} from '../features/user/userSlice';
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async e => {
-    e.preventDefault();
-    try {
-      const res = await fetch('/user/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
+  e.preventDefault();
+  try {
+    const res = await fetch('/user/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
 
-      const data = await res.json();
-      console.log(data);
-      // handle login success
-      navigate('/home');
-    } catch (err) {
-      console.error(err);
+    const data = await res.json();
+    console.log(data);
+    if (data.success) {
+      dispatch(loginSuccess(data.data)); // assuming your API returns { user: { username: "..." }, success: true }
+      navigate('/');
+    } else {
+      alert(data.message || 'Login failed');
     }
-  };
+  } catch (err) {
+    console.error(err);
+  }
+};
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
