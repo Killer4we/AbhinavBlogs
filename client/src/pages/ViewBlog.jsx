@@ -14,7 +14,7 @@ const ViewBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`/blog/getBlog/${id}`);
+        const res = await fetch(`https://blogbrew.onrender.com/blog/getBlog/${id}`);
         const data = await res.json();
         setBlog(data);
         setLoading(false);
@@ -30,7 +30,7 @@ const ViewBlog = () => {
     if (!window.confirm('Are you sure you want to delete this blog?')) return;
 
     try {
-      const res = await fetch(`/blog/deleteBlog/${id}`, {
+      const res = await fetch(`https://blogbrew.onrender.com/blog/deleteBlog/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${user.token}`, // Assuming JWT auth
