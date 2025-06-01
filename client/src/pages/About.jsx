@@ -3,10 +3,10 @@ import React from 'react'
 function About() {
   return (
     <section class="max-w-4xl mx-auto px-6 py-12">
-  <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">About Abhinav Blogs</h2>
+  <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">About BlogBrew</h2>
 
   <p class="text-lg text-gray-700 leading-relaxed mb-6">
-    Welcome to <span class="font-semibold text-blue-600">Abhinav Blogs</span> – a space where curiosity meets creativity. I’m Abhinav, a passionate coder, tech enthusiast, and lifelong learner. Through this blog, I aim to share insights, experiences, and experiments from my journey in software development, emerging technologies, and beyond. Whether it’s tackling a tricky bug or exploring a new framework, every post is crafted with the intention to inform, inspire, and ignite discussions within our growing community of developers and curious minds.
+    Welcome to <span class="font-semibold text-blue-600">BlogBrew</span> – a space where curiosity meets creativity. I’m Abhinav, a passionate coder, tech enthusiast, and lifelong learner. Through this blog, I aim to share insights, experiences, and experiments from my journey in software development, emerging technologies, and beyond. Whether it’s tackling a tricky bug or exploring a new framework, every post is crafted with the intention to inform, inspire, and ignite discussions within our growing community of developers and curious minds.
   </p>
 
   <p class="text-lg text-gray-700 leading-relaxed mb-6">
