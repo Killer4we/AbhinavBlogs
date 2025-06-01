@@ -10,7 +10,7 @@ const getBlogs = async(req,res)=>{
             })
         }
 
-        res.status(200).send(blogs);
+        res.status(200).json({data:blogs});
         
     }catch(error){
         console.error(error.message);
@@ -30,7 +30,7 @@ const getBlog = async(req,res)=>{
     }
     catch(error){
         console.error(error.message);
-        res.status(404).send(error.message);
+        res.status(404).json({message:error.message});
 
     }
 };
@@ -58,8 +58,8 @@ const updateBlog = async(req,res)=>{
         }
         res.status(200).send(updatedBlog);
     }catch(error){
-        console.error(error.message);
-        res.status(404).send(error.message);
+        // console.error(error.message);
+        res.status(404).json({message:error.message});
 
     }
 };

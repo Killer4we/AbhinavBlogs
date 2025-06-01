@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Blog = require('../models/blog');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
@@ -39,6 +40,7 @@ const login = async(req,res)=>{
                 email,
                 token,
                 username:user.username,
+                id:user._id,
             }
         })
         
@@ -77,4 +79,29 @@ const signup = async(req,res)=>{
     }
 }
 
-module.exports = {login,signup};
+const delUser = async(req,res)=>{
+    const {id}=req.params;
+    try{
+
+        const user = await User.findById(id);
+        if(!user){
+            return res.status(500).json({message:"User Not found"});
+        }
+
+        await Blog.deleteMany({author:user.username});
+        
+        const delUser = await User.findByIdAndDelete(id);
+        
+        // toast.success("User deleted successfully");
+        res.status(200).json({message:"User deleted successfully"});
+        
+
+    }catch(error){
+        console.error(error.message);
+        res.status(500).send(error.message);
+    }
+}
+
+
+
+module.exports = {login,signup,delUser};

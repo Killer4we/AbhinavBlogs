@@ -7,6 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/user': 'http://localhost:3000',
+      '/blog': 'http://localhost:3000',
     },
   },
 })

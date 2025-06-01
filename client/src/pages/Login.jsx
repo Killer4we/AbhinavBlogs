@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import {loginSuccess} from '../features/user/userSlice';
+import {setUser} from '../features/user/userSlice';
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -23,7 +23,7 @@ export default function Login() {
     const data = await res.json();
     console.log(data);
     if (data.success) {
-      dispatch(loginSuccess(data.data)); // assuming your API returns { user: { username: "..." }, success: true }
+      dispatch(setUser(data.data)); // assuming your API returns { user: { username: "..." }, success: true }
       navigate('/');
     } else {
       alert(data.message || 'Login failed');

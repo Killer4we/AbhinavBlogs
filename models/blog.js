@@ -12,7 +12,11 @@ const BlogSchema = new Schema({
     author:{
         type:String,
         required:true,
-    }
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+  },
 });
 
 const BlogModel = model("blog", BlogSchema);
