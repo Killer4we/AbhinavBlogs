@@ -31,7 +31,7 @@ const UserProfile = () => {
     if (!confirmed) return;
 
     try {
-      const res = await fetch(`/user/delete/${user.id}`, {
+      const res = await fetch(`https://blogbrew.onrender.com/user/delete/${user.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
