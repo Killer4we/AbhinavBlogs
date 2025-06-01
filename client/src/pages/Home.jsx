@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch("/blog/getBlogs"); // adjust if your endpoint differs
+        const res = await fetch("https://blogbrew.onrender.com/blog/getBlogs"); // adjust if your endpoint differs
         const data = await res.json();
         // console.log(data);
         setBlogs(data.data); // handle depending on your API structure
