@@ -22,7 +22,7 @@ const UpdateBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`/blog/getBlog/${id}`);
+        const res = await fetch(`https://blogbrew.onrender.com/blog/getBlog/${id}`);
         const data = await res.json();
         setFormData(data);
       } catch (error) {
@@ -43,7 +43,7 @@ const UpdateBlog = () => {
     console.log(formData);
 
     try {
-      const res = await fetch(`/blog/updateBlog/${id}`, {
+      const res = await fetch(`https://blogbrew.onrender.com/blog/updateBlog/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
