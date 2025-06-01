@@ -30,7 +30,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16 items-center">
           {/* Section 1: Site Name */}
           <div className="flex-shrink-0 text-xl font-bold text-blue-600">
-            <Link to="/">AbhinavBlogs</Link>
+            <Link to="/">BlogBrew</Link>
           </div>
 
           {/* Section 2: Search Bar */}
