@@ -16,7 +16,7 @@ const SearchResults = () => {
     const fetchResults = async () => {
       setLoading(true);
       try {
-        const res = await fetch("/blog/getBlogs");
+        const res = await fetch("https://blogbrew.onrender.com/blog/getBlogs");
         const data = await res.json();
 
         // Make sure data.data exists and is an array
