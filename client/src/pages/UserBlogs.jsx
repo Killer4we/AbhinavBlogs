@@ -11,7 +11,7 @@ const UserBlogs = () => {
     const fetchBlogs = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`/blog/getBlogs`);
+        const res = await fetch(`https://blogbrew.onrender.com/blog/getBlogs`);
         const data = await res.json();
         const filteredBlogs = data.data.filter(
           (blog) => blog.author === user.username
