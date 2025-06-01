@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.*  # Covers .env.development, .env.production etc.
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.sw?
+*.njsproj
+*.sln
+
+# Other common ignores
+coverage/
+*.tsbuildinfo
