@@ -10,7 +10,7 @@ function About() {
   </p>
 
   <p class="text-lg text-gray-700 leading-relaxed mb-6">
-    This blog isn’t just a journal — it’s a platform built to simplify complex concepts and make learning enjoyable. I love breaking down technical ideas into digestible pieces, creating tutorials, and sharing personal experiences from my projects, internships, and hackathons. From backend battles to frontend finesse, <span class="text-blue-600 font-medium">Abhinav Blogs</span> is where practical knowledge meets real-world problem solving. You’ll also find reflections on productivity, career growth, and lessons learned the hard way.
+    This blog isn’t just a journal — it’s a platform built to simplify complex concepts and make learning enjoyable. I love breaking down technical ideas into digestible pieces, creating tutorials, and sharing personal experiences from my projects, internships, and hackathons. From backend battles to frontend finesse, <span class="text-blue-600 font-medium">BlogBrew</span> is where practical knowledge meets real-world problem solving. You’ll also find reflections on productivity, career growth, and lessons learned the hard way.
   </p>
 
   <p class="text-lg text-gray-700 leading-relaxed">
