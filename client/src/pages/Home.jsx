@@ -45,7 +45,7 @@ const Home = () => {
       {/* Hero Section */}
       <div className="bg-blue-50 p-8 rounded-2xl shadow-md text-center mb-10">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Welcome to Abhinav Blogs
+          Welcome to BlogBrew
         </h1>
         <p className="text-gray-600 mb-6">
           Share your stories, thoughts, and experiences with the world.
