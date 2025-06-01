@@ -27,7 +27,7 @@ const CreateBlog = () => {
     }
 
     try {
-      const res = await fetch('/blog/createBlog', {
+      const res = await fetch('https://blogbrew.onrender.com/blog/createBlog', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
