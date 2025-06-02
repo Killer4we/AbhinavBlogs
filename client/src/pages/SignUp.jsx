@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Eye } from 'lucide-react';
+
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -7,6 +9,7 @@ export default function Signup() {
     email: '',
     password: '',
   });
+  const [showPassword,setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = e => {
@@ -30,7 +33,16 @@ export default function Signup() {
       console.error(err);
     }
   };
-
+  
+  function handlePasswordChange(){
+    if(showPassword===true){
+      setShowPassword(false);
+    }
+    else{
+      setShowPassword(true);
+    }
+  }
+  
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
       <form
@@ -43,6 +55,7 @@ export default function Signup() {
           type="text"
           name="username"
           placeholder="Username"
+          minLength="4"
           className="w-full p-3 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           onChange={handleChange}
           required
@@ -57,15 +70,23 @@ export default function Signup() {
           required
         />
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          className="w-full p-3 mb-6 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          onChange={handleChange}
-          required
-        />
-
+        <div className="relative w-full mb-6">
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            placeholder="Password"
+            className="w-full p-3 pr-10 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            onChange={handleChange}
+            required
+          />
+          <button
+            type="button"
+            onClick={handlePasswordChange}
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500"
+          >
+            <Eye size={18} />
+          </button>
+        </div>
         <button
           type="submit"
           className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition"
